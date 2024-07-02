@@ -1,0 +1,13 @@
+{% extends "temples/web.html" %}
+
+{% block page_content %}
+<div>
+    <h2>Flight Details</h2>
+    <li>Airline: {{ doc.airplane.split('-')[0] }}</li>
+    <li>{{ doc.source_airport_code }} -> {{ doc.destination_airport_code }}</li>
+    <li>{{ doc.date_of_departure }} | {{ doc.time_of_departure }}</li>
+    <li>Duration: {{ doc.duration }}</li>
+    <button>Book Flight</button>
+
+</div>
+{% endblock %}

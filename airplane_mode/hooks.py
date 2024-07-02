@@ -4,6 +4,12 @@ app_publisher = "Leo Dao"
 app_description = "Plane app"
 app_email = "leotomdao@gmail.com"
 app_license = "mit"
+
+website_route_rules = [
+    {"from_route": "/show-me", "to_route": "show_me"},
+    {"from_route": "/flight/<route>", "to_route": "flight_detail"}
+]
+
 # required_apps = []
 
 # Includes in <head>
