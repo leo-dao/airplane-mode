@@ -1,8 +1,14 @@
 <div class="flight-details" style="border: 1px solid #ccc; margin: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <ul>
-        <h4>{{ doc.airplane.split('-')[0] }}</h4>
+        {# Fetch the related Airplane document #}
+        {% set airplane = frappe.get_doc("Airplane", doc.airplane) %}
+        
+        {# Fetch the related Airline document from the Airplane #}
+        {% set airline = frappe.get_doc("Airline", airplane.airline) %}
+    
+        <h4>{{ airline.name }}</h4>
         <p> {{ doc.source_airport_code }} -> {{ doc.destination_airport_code }}</p>
-        <p>{{ doc.date_of_departure }} | {{ doc.time_of_departure }} | {{ doc.duration }}</p>
+        <p>{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ frappe.utils.format_time(doc.time_of_departure) }} | {{ frappe.utils.format_duration(doc.duration) }}</p>
         <p><a href="/flights/{{ doc.route }}">View flight</a></p>
     </ul>
 </div>
