@@ -31,4 +31,4 @@ class AirplaneTicket(Document):
 		for index in duplicates:
 			self.remove(self.add_ons[index])
 		
-		self.total_amount = self.flight_price + addons_sum
+		self.total_amount = float(self.flight_price.replace(',', '.')) + addons_sum
