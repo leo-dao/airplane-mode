@@ -1,12 +1,16 @@
-# Copyright (c) 2024, Leo Dao and contributors
-# For license information, please see license.txt
-
 import frappe
-from frappe.model.document import Document
-from datetime import datetime
 from frappe.website.website_generator import WebsiteGenerator
+from frappe import _
 
+class AirplaneFlight(WebsiteGenerator):
+    def validate(self):
+        if self.status not in ["Scheduled", "Completed", "Cancelled"]:
+            frappe.throw(_("Invalid status"))
 
-class AirplaneFlight(Document):
-	def on_submit(self):
-		self.status = 'Completed'
+    def on_submit(self):
+        self.status = 'Completed'
+
+    def get_context(self, context):
+        context.published = self.published
+        if not self.published:
+            raise frappe.PageNotFoundError

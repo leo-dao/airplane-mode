@@ -21,9 +21,7 @@
   "time_of_departure",
   "duration",
   "section_break_zang",
-  "route",
-  "published",
-  "amended_from"
+  "route"
  ],
  "fields": [
   {
@@ -114,27 +112,10 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
-  },
-  {
-   "default": "0",
-   "fieldname": "published",
-   "fieldtype": "Check",
-   "label": "Published"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Airplane Flight",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
- "is_published_field": "published",
  "is_submittable": 1,
  "links": [
   {
@@ -142,7 +123,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-07-02 15:28:24.072345",
+ "modified": "2024-07-05 22:20:13.214399",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
