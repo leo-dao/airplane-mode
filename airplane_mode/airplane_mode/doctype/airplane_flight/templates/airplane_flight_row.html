@@ -1,4 +1,4 @@
-<div class="flight-details" style="border: 1px solid #ccc; margin: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<div style="border: 1px solid #ccc; margin: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <ul>
         {# Fetch the related Airplane document #}
         {% set airplane = frappe.get_doc("Airplane", doc.airplane) %}
@@ -12,4 +12,3 @@
         <p><a href="{{ doc.route }}">View flight</a></p>
     </ul>
 </div>
-<!-- this is a sample default list template -->
