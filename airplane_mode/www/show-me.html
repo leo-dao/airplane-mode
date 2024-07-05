@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>{{ "Show Me" }}</title>
     <style>
         .rectangle {
             width: 200px;
             height: 100px;
-            background-color: {{ color }};
+            background-color: {{ frappe.form_dict.color if 'color' in frappe.form_dict else 'black' }};
             border: 1px solid #000;
         }
     </style>

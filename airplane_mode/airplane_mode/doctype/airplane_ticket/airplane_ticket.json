@@ -125,13 +125,13 @@
   {
    "fieldname": "add_ons",
    "fieldtype": "Table",
-   "label": "Add Ons",
+   "label": "add_ons",
    "options": "Airplane Ticket Add-on Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 12:01:53.425563",
+ "modified": "2024-07-04 19:28:28.742713",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

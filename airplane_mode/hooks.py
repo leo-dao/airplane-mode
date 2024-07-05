@@ -6,7 +6,7 @@ app_email = "leotomdao@gmail.com"
 app_license = "mit"
 
 website_route_rules = [
-    {"from_route": "/show-me", "to_route": "show_me"},
+    {"from_route": "/show-me", "to_route": "show-me"},
     {"from_route": "/flight/<route>", "to_route": "flight_detail"}
 ]
 
