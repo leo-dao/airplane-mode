@@ -4,8 +4,6 @@
 import frappe
 from frappe.model.document import Document
 from frappe import _
-import random
-import string
 
 class AirplaneTicket(Document):
     
@@ -46,11 +44,12 @@ class AirplaneTicket(Document):
 		unique_addons = set()
 		duplicates = []
 		for index, addon in enumerate(self.add_ons):
-			if addon.add_on_type in unique_addons:
+			
+			if addon.item in unique_addons:
 				duplicates.append(index)
 			else:
 				addons_sum += addon.amount
-				unique_addons.add(addon.add_on_type)
+				unique_addons.add(addon.item)
 		
 		for index in duplicates:
 			self.remove(self.add_ons[index])
