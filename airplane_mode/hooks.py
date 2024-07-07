@@ -10,6 +10,14 @@ website_route_rules = [
     {"from_route": "/flight/<route>", "to_route": "flight_detail"}
 ]
 
+standard_queries = {
+    "Airline Revenue Report": {
+        "script": "your_app.your_app.report.airline_revenue_report.execute",
+        "formatter": "frappe.desk.query_report.run",
+        "disable_prepend_attach": True
+    }
+}
+
 # required_apps = []
 
 # Includes in <head>
