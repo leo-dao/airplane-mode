@@ -7,15 +7,33 @@ app_license = "mit"
 
 website_route_rules = [
     {"from_route": "/show-me", "to_route": "show-me"},
-    {"from_route": "/flight/<route>", "to_route": "flight_detail"}
+    {"from_route": "/flight/<route>", "to_route": "flight_detail"},
+    {"from_route": "/available-shops", "to_route": "available-shops"},
 ]
 
 standard_queries = {
     "Airline Revenue Report": {
-        "script": "your_app.your_app.report.airline_revenue_report.execute",
+        "script": "airplane_mode.airplane_mode.report.airline_revenue_report.execute",
         "formatter": "frappe.desk.query_report.run",
         "disable_prepend_attach": True
     }
+}
+
+doc_events = {
+    "Rent Payment": {
+        "before_print_format": "airplane_mode.airport_shop_management.doctype.rent_payment.rent_payment.before_print_format"
+    },
+    "Shop": {
+        "after_insert": "airplane_mode.airplane_mode.doctype.airport.update_shop_count",
+        "on_trash": "airplane_mode.airplane_mode.doctype.airport.update_shop_count",
+        "on_update": "airplane_mode.airplane_mode.doctype.airport.update_shop_count"
+    }
+}
+
+scheduler_events = {
+    "monthly": [
+        "airplane_mode.airport_shop_management.doctype.rent_payment.rent_payment.send_rent_reminders"
+    ]
 }
 
 # required_apps = []
