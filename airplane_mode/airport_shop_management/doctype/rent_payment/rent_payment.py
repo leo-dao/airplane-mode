@@ -2,6 +2,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import nowdate, add_days, formatdate
+from datetime import datetime
 
 class RentPayment(Document):
     pass
@@ -37,12 +38,12 @@ def send_rent_reminders():
 
     for tenant in tenants:
         # Check if the rent is due within the next 30 days
-        if tenant.date_of_expiry and (tenant.date_of_expiry <= add_days(today, 30)):
+        if tenant.date_of_expiry and (tenant.date_of_expiry <= datetime.strptime(add_days(today, 30), '%Y-%m-%d').date()):
             tenant_details = frappe.get_doc('Tenant', tenant.tenant)
             
             subject = "Rent Due Reminder"
             message = f"""
-            Dear {tenant_details.tenant_name},
+            Dear {tenant_details.name},
             
             This is a reminder that your rent for the shop {tenant.name} is due on {formatdate(tenant.date_of_expiry)}.
             
