@@ -10,6 +10,7 @@
   "passenger",
   "status",
   "seat",
+  "gate_number",
   "column_break_gqnm",
   "flight",
   "add_ons",
@@ -23,7 +24,8 @@
   "column_break_ztsh",
   "duration_of_flight",
   "flight_price",
-  "total_amount"
+  "total_amount",
+  "amended_from"
  ],
  "fields": [
   {
@@ -127,12 +129,27 @@
    "fieldtype": "Table",
    "label": "add_ons",
    "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-06 16:44:53.121812",
+ "modified": "2024-07-12 08:06:55.173104",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

@@ -1,0 +1,34 @@
+<!-- airplane_mode/airplane_mode/www/available_shops.html -->
+{% extends "templates/web.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Shop Number</th>
+            <th>Airport</th>
+            <th>Tenant</th>
+            <th>Rent Amount</th>
+            <th>Date of Expiry</th>
+            <th>Surface Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for shop in frappe.get_all("Shop", filters={"status": "Available"}, fields=["name", "number", "airport", "tenant", "rent_amount", "date_of_expiry", "surface_area"]) %}
+        <tr>
+            <td>{{ shop.number }}</td>
+            <td>{{ shop.airport }}</td>
+            <td>{{ shop.tenant }}</td>
+            <td>{{ shop.rent_amount }}</td>
+            <td>{{ shop.date_of_expiry }}</td>
+            <td>{{ shop.surface_area }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
