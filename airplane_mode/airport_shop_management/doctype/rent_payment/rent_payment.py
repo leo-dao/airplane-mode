@@ -9,13 +9,11 @@ class RentPayment(Document):
 
 @frappe.whitelist()
 def create_rent_payment(shop_number, amount):
-    # Get the shop document
     shop = frappe.get_value("Shop", {"number": shop_number}, "name")
 
     if not shop:
         frappe.throw(_("Shop not found"))
 
-    # Create the rent payment document
     rent_payment = frappe.get_doc({
         "doctype": "Rent Payment",
         "shop": shop,
@@ -32,6 +30,10 @@ def generate_rent_receipt(rent_payment):
 
 @frappe.whitelist()
 def send_rent_reminders():
+
+    if not frappe.get_single('Shop Settings').enable_rent_reminder:
+        return 
+
     today = nowdate()
 
     tenants = frappe.get_all('Shop', fields=['tenant', 'name', 'rent_amount', 'date_of_expiry'], filters={'status': 'Occupied'})
