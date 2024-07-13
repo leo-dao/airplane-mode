@@ -22,6 +22,7 @@
   "duration",
   "section_break_zang",
   "route",
+  "crew_members",
   "amended_from"
  ],
  "fields": [
@@ -123,6 +124,11 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Data",
+   "label": "Crew Members"
   }
  ],
  "has_web_view": 1,
@@ -134,7 +140,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-07-06 14:25:19.569002",
+ "modified": "2024-07-13 14:47:49.427515",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
