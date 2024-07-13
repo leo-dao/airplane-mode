@@ -19,8 +19,7 @@
    "fieldname": "number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Number",
-   "read_only": 1
+   "label": "Number"
   },
   {
    "fieldname": "airport",
@@ -42,8 +41,7 @@
    "fieldname": "rent_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Rent Amount",
-   "reqd": 1
+   "label": "Rent Amount"
   },
   {
    "fieldname": "date_of_expiry",
@@ -68,7 +66,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-12 07:51:41.705801",
+ "modified": "2024-07-13 14:24:46.467822",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",

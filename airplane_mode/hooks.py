@@ -22,11 +22,6 @@ standard_queries = {
 doc_events = {
     "Rent Payment": {
         "before_print_format": "airplane_mode.airport_shop_management.doctype.rent_payment.rent_payment.before_print_format"
-    },
-    "Shop": {
-        "after_insert": "airplane_mode.airplane_mode.doctype.airport.update_shop_count",
-        "on_trash": "airplane_mode.airplane_mode.doctype.airport.update_shop_count",
-        "on_update": "airplane_mode.airplane_mode.doctype.airport.update_shop_count"
     }
 }
 
